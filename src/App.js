@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import NVD_Form1 from './components/NVD_Form1'
+import NVD_Form2 from './components/NVD_Form2'
+import NVD_Form3 from './components/NVD_Form3'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  handleSubmit = (param)=>{
+    console.log(param);
+  }
+  render() {
+    return (
+      <div>
+        <h1>Event - Form - Controlled Component</h1>
+        <div>
+          <NVD_Form1/>
+          <NVD_Form2/>
+          <NVD_Form3 onSubmit={this.handleSubmit}/>
+        </div>
+      </div>
+    )
+  }
 }
-
-export default App;
